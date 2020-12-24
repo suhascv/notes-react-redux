@@ -5,7 +5,9 @@
     min-height: 100vh;
     background-color: rgb(3, 63, 63);
     justify-content: flex-start;
+    align-items: flex-start;
     margin-left: 30px;
+
     overflow-x: hidden;
     
 }
@@ -15,8 +17,12 @@
     display: flexbox;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: 100%;
+    width: 50%;
     color:wheat;
+}
+
+.notes{
+    width: 50%;
 }
 .input-title{
     width:150px;
@@ -26,7 +32,7 @@
 .input-text{
     width:500px;
     height: 200px;
-    font-size: large;
+    font-size: medium;
 }
 button{
     width: 150px;

@@ -38,7 +38,9 @@ class NotesApp extends React.Component{
                 <button onClick={this.submitChange}>add note</button>
 
             </div>
-            <h1 className="notes"> notes</h1>
+            
+        <div className="notes">
+            <h1 className="note"> notes</h1>
           <ul>
             {
                this.props.notes.map(
@@ -54,6 +56,7 @@ class NotesApp extends React.Component{
                 )
             }
           </ul>
+          </div>
         </div>
       )
     }
