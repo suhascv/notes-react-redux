@@ -1,8 +1,33 @@
-import logo from './logo.svg';
+
 import './App.css';
 import {createStore} from 'redux';
 import {Provider,connect} from 'react-redux';
 import React from 'react';
+
+
+const loadState = () =>{
+  try{
+    const serializedState  = localStorage.getItem('state');
+    if(serializedState===null){
+      return []
+    }
+    return JSON.parse(serializedState);
+  }
+  catch(err){
+    return undefined;
+  }
+};
+
+const saveState = (state)=>{
+  try{
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem('state',serializedState);
+  }
+  catch(err){
+    //ignore
+  }
+};
+
 
 // define action type
 const ADD = 'ADD';
@@ -23,8 +48,17 @@ const notesReducer = (state=[],action)=>{
   }
 };
 
+
+//define persisted state
+const persistedState = loadState();
+
+
 // define redux store
-const store = createStore(notesReducer);
+const store = createStore(notesReducer,persistedState);
+store.subscribe(()=>{
+  saveState(store.getState())
+});
+
 
 //notesApp
 class NotesApp extends React.Component{
@@ -47,6 +81,7 @@ class NotesApp extends React.Component{
   }
 
   render(){
+    console.log(this.props);
     return(
       <div>
         <input value={this.state.input} onChange={this.handleChange}/>
@@ -79,9 +114,10 @@ const mapDispatchToProps = (dispatch)=>{
   }
 };
 
-
 //define react-redux connect
 const Container = connect(mapStateToProps,mapDispatchToProps)(NotesApp);
+
+
 
 //App wrapping everything
 function App() {
