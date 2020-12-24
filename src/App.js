@@ -9,8 +9,10 @@ import {addNote} from './action';
 
 
 
+
 //define persisted state
 const persistedState = loadState();
+
 
 
 // define redux store
@@ -18,7 +20,6 @@ const store = createStore(notesReducer,persistedState);
 store.subscribe(()=>{
   saveState(store.getState())
 });
-
 
 
 //define map state to props

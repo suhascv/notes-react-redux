@@ -1,0 +1,59 @@
+.container{
+    display: flexbox;
+    flex-direction: row;
+    max-width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(3, 63, 63);
+    justify-content: flex-start;
+    margin-left: 30px;
+    overflow-x: hidden;
+    
+}
+
+.new-note{
+    font-size: 30px;
+    display: flexbox;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    color:wheat;
+}
+.input-title{
+    width:150px;
+    height: 30px;
+    font-size: large;
+}
+.input-text{
+    width:500px;
+    height: 200px;
+    font-size: large;
+}
+button{
+    width: 150px;
+    height: 50px;
+    font-size: medium;
+    font-weight: bolder;
+    color:brown;
+}
+
+button:hover{
+    background-color:brown;
+    color:white;
+
+}
+
+.notes{
+    color: rgb(116, 116, 211);
+    font-size: 40px;
+}
+.new-note li{
+    text-decoration: none;
+}
+
+.title{
+    color: brown;
+}
+.text{
+    color: rgb(236, 234, 226);
+
+}

@@ -1,6 +1,5 @@
 import {ADD} from './action';
 
-
 //define reducer
 export const notesReducer = (state=[],action)=>{
     switch(action.type){
