@@ -1,5 +1,5 @@
 # NotesApp 
-A simple react-redux app with persistant to add and display notes with title and description.
+A simple react-redux app with persistant storage to add and display notes with title and description.
 
 
 # Getting Started with Create React App
